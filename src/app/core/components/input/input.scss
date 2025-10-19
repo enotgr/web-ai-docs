@@ -1,0 +1,51 @@
+:host {
+  display: inline-block;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.input-wrapper {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  position: relative;
+  font-family: inherit;
+  border: 2px solid oklch(68.5% 0.169 237.323);
+  border-radius: 8px;
+
+  label {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s ease all;
+    color: oklch(55.3% 0.013 58.071);
+    font-size: 16px;
+    pointer-events: none;
+    padding: 0 2px;
+  }
+
+  input {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    color: oklch(21.6% 0.006 56.043);
+
+    ::placeholder {
+      visibility: hidden;
+    }
+  }
+
+  &.focused label,
+  &:has(input:not(:placeholder-shown)) label {
+    top: 0;
+    font-size: var(--vitron-font-size-sm);
+    background-color: oklch(96.7% 0.001 286.375);
+  }
+}

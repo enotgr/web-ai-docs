@@ -1,0 +1,39 @@
+<aside
+  class="flex h-full min-h-full flex-col border-r border-white/10 bg-slate-950/80 px-4 py-6 text-sm backdrop-blur transition-all duration-300 gap-8"
+  [ngClass]="{
+    'w-16': isCollapsed(),
+    'w-72': !isCollapsed()
+  }"
+>
+  <section class="flex flex-col gap-2">
+    <p
+      class="px-3 text-xs font-semibold uppercase tracking-wide text-slate-500 transition-opacity duration-200"
+      [class.opacity-0]="isCollapsed()"
+      [attr.aria-hidden]="isCollapsed()"
+    >
+      TEMPLATES
+    </p>
+    <div class="flex flex-col gap-1">
+      @for (item of templates(); track item.title) {
+        <a
+          class="flex items-center rounded-md py-2 transition hover:bg-white/10 hover:text-white"
+          [ngClass]="{
+            'px-3': !isCollapsed(),
+            'px-2': isCollapsed(),
+            'justify-center': isCollapsed()
+          }"
+          [routerLink]="item.url"
+          [attr.title]="isCollapsed() ? item.title : null"
+        >
+          <span
+            class="truncate text-sm transition-opacity duration-200"
+            [class.opacity-0]="isCollapsed()"
+            [attr.aria-hidden]="isCollapsed()"
+          >
+            {{ item.title }}
+          </span>
+        </a>
+      }
+    </div>
+  </section>
+</aside>

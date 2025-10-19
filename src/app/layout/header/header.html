@@ -1,0 +1,17 @@
+<header class="sticky top-0 z-10 flex items-center gap-4 border-b border-white/10 bg-slate-950/80 px-6 py-4 backdrop-blur">
+  <button
+    type="button"
+    class="flex h-8 w-8 items-center justify-center rounded-md text-slate-100 transition hover:bg-white/20"
+    [ngClass]="{ 'bg-white/10': !isCollapsed() }"
+    (click)="toggleSidebar()"
+  >
+    <img src="/icons/sidebar.svg" alt="" class="h-6 w-6" />
+  </button>
+
+  <div class="text-lg font-semibold tracking-wide text-white">AI Docs</div>
+
+  <div class="ml-auto flex items-center gap-2 text-sm text-slate-300">
+    <span class="hidden h-1.5 w-1.5 rounded-full bg-emerald-400 sm:inline-block"></span>
+    <span>Profile</span>
+  </div>
+</header>

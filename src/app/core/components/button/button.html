@@ -1,0 +1,9 @@
+<button
+  class="rounded-md px-3 py-1.5 font-medium transition cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+  [ngClass]="[variantClass, sizeClass]"
+  [class.w-full]="wide()"
+  [type]="type()"
+  [disabled]="disabled()"
+>
+  <ng-content></ng-content>
+</button>
